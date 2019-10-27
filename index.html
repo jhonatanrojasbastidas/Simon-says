@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simon Dice</title>
+    <style>
+      body {
+        margin: 0;
+        background: #dedede;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+      }
+      .gameboard {
+        height: 100vh;
+        width: 100vh;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        max-height: 60vh;
+        max-width: 60vh;
+      }
+      .color {
+        width: 50%;
+        height: 50%;
+        display: inline-block;
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: left;
+      }
+      .blue {
+        background: #154360;
+      }
+      .blue.light {
+        background: #5499C7;
+      }
+      .red {
+        background: #7B241C;
+      }
+      .red.light {
+        background: #E74C3C;
+      }
+      .yellow {
+        background: #F4D03F;
+      }
+      .yellow.light {
+        background: #F1C40F;
+      }
+      .verde {
+        background: #145A32;
+      }
+      .verde.light {
+        background: #58D68D;
+      }
+      .btn-start {
+        width: 400px;
+        height: 100px;
+        background: #ecf0f1;
+        color: #2c3e50;
+        font-size: 2.5rem;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 200px);
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gameboard">
+      <div id="blue" class="color blue left" data-color="blue"></div>
+      <div id="red" class="color red right" data-color="red"></div>
+      <div id="yellow" class="color yellow left" data-color="yellow"></div>
+      <div id="verde" class="color verde right" data-color="verde"></div>
+      <audio id="gamestart"  src="Game_start.mp3"></audio>
+      <button id="btnEmpezar" class="btn-start" onclick="document.getElementById('gamestart').play(); pulsar(); carga_sonido();">Tócame</button>
+    </div>
+    <script>
+      const blue = document.getElementById('blue')
+      const red = document.getElementById('red')
+      const yellow = document.getElementById('yellow')
+      const verde = document.getElementById('verde')
+      const btnEmpezar = document.getElementById('btnEmpezar')
+      class Juego {
+        constructor() {
+          this.inicializar()
+        }
+        inicializar() {
+          btnEmpezar.classList.add('hide')
+        }
+      }
+      function empezarJuego() {
+        var juego = new Juego()
+      }
+      function pulsar() {
+          alert("Este ejercicio esta inspirado, en el juego electrónico creado por Ralph Baer y Howard J. Morrison en 1978; tuvo un gran éxito durante la década de los 80's. El juego de forma aleatoria va iluminando los cuadrantes de colores, y a la vez que se ilumina cada cuadrante emite un sonido.")
+      }
+     
+    </script>
+  </body>
+</html>
